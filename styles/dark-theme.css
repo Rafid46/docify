@@ -10,7 +10,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular',
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, ".SFNSText-Regular",
     sans-serif;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
@@ -75,13 +75,13 @@ body {
 }
 
 .editor-placeholder {
-  color: #b4c6ee;
+  color: #d4d4d4;
   overflow: hidden;
   position: absolute;
   text-overflow: ellipsis;
   top: 40px;
   left: 40px;
-  font-size: 15px;
+  font-size: 12px;
   user-select: none;
   display: inline-block;
   pointer-events: none;

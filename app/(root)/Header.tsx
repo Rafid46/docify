@@ -8,7 +8,7 @@ const Header = () => {
           <nav className="relative flex items-center justify-between h-16 lg:rounded-md  lg:h-24 lg:px-8 lg:py-2">
             <div className="flex-shrink-0">
               <a href="#" title="" className="flex">
-                <p className="text-[#5DB996] text-3xl font-bold">Docify</p>
+                <p className="text-[#5DEBD7] text-3xl font-bold">Docify</p>
               </a>
             </div>
 

@@ -16,7 +16,7 @@ import React from "react";
 // try to recover gracefully without losing user data.
 
 function Placeholder() {
-  return <div className="editor-placeholder">Enter some rich text...</div>;
+  return <div className="editor-placeholder">Type here......</div>;
 }
 
 export function Editor() {
@@ -32,7 +32,7 @@ export function Editor() {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <div className="editor-container size-full">
+      <div className="editor-container size-full px-5">
         <ToolbarPlugin />
 
         <div className="editor-inner h-full">
