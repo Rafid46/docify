@@ -1,8 +1,9 @@
 import { liveblocks } from "@/lib/liveblocks";
+import { getUserColor } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
-export async function POST(request: Request) {
+export async function POST() {
   // Get the current user from your database
   const clerkUser = await currentUser();
   if (!clerkUser) redirect("/sign-in");
@@ -10,9 +11,11 @@ export async function POST(request: Request) {
   const user = {
     id,
     info: {
+      id,
       name: `${firstName} ${lastName}`,
       email: emailAddresses[0].emailAddress,
       avatar: imageUrl,
+      color: getUserColor(id),
     },
   };
   //   const user = __getUserFromDB__(request);
@@ -20,10 +23,10 @@ export async function POST(request: Request) {
   // Identify the user and return the result
   const { status, body } = await liveblocks.identifyUser(
     {
-      userId: user.id,
-      groupIds, // Optional
+      userId: user.info.email,
+      groupIds: [],
     },
-    { userInfo: user.metadata }
+    { userInfo: user.info }
   );
 
   return new Response(body, { status });
